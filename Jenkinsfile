@@ -17,6 +17,12 @@ pipeline {
                 echo 'Deploying application...'
             }
         }
+        stage('Test') {
+    steps {
+        sh './non_existent_exec' // This will cause an error
+    }
+}
+
     }
 
     post {
